@@ -1,0 +1,241 @@
+.header h1 {
+    color: #ffe616;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.mainmenu li {
+    font-size: 20px;
+    list-style-type: none;
+    font-style: italic;
+    position: relative;
+    display: inline-block;
+    padding-right: 15px;
+}
+
+
+
+img[alt] {
+    width: 200px;
+    /*height: 200px;*/
+    /*border: 3px solid #814d46;*/
+    /*border-width: 5px 10px 15px 20px;*/
+}
+
+
+h1 {
+    color: #15410e;
+
+}
+.product_headers {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+
+#short_desc:first-letter {
+    font-family: "Times New Roman", Times, serif; /* Гарнитура шрифта первой буквы */
+    font-size: 150%; /* Размер шрифта первого символа */
+    color: red; /* Красный цвет текста */
+}
+
+#short_desc {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+    margin-bottom: 50px;
+}
+#full_desc:first-letter {
+    font-family: "Times New Roman", Times, serif; /* Гарнитура шрифта первой буквы */
+    font-size: 200%; /* Размер шрифта первого символа */
+    color: red; /* Красный цвет текста */
+}
+
+#full_desc {
+    color: #484343;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    font-weight: 400;
+    margin: 0 10px;
+}
+
+.param_list {
+    color: navy;
+    font-style: inherit;
+    list-style-image: url('/static/main/media/img/pntr.jpg');
+    margin-left: 120px;
+
+}
+
+a img {
+    border: 1px solid #814d46;
+    width: 250px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+a img:hover {
+    border: 1px transparent;
+    padding: 1px;
+}
+
+fieldset {
+    width: 50%;
+}
+
+fieldset legend {
+    color: #30993f;
+}
+
+fieldset input {
+    font-size: 15px;
+    width: 50%;
+    height: 32px;
+    font-style: italic;
+}
+
+a:hover {
+    color: #ff0a03;
+}
+
+#logo {
+    width: 60px;
+}
+
+input[type="email"]:focus {
+    color: #ff0a03;
+    background-color: #1a411a;
+}
+
+input, textarea{
+    text-transform: capitalize;
+}
+
+table {
+    border: 1px solid #707070;
+    width: 960px;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #707070;
+}
+
+
+.container {
+    width: 960px;
+    height: 100%;
+    background: #cfdec8;
+    margin: 0 auto;
+}
+
+.header {
+    height: 100%;
+    background-blend-mode: multiply;
+    background-image: url(/static/main/media/img/header_bg.jpg);
+    background-position: top;
+    background-size: cover;
+    background-color: #cccccc;
+}
+
+.header_back {
+    height: 25px;
+    width: 100%;
+}
+
+.shop_name {
+    float: left;
+}
+
+img[id='logo'] {
+    width: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+}
+
+.mainmenu {
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    margin-top: auto;
+}
+
+.footer {
+    height: 100px;
+    background-color: #cccccc;
+}
+
+.footer p {
+    font-size: smaller;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.myButton {
+    box-shadow: 3px 4px 0 0 #899599;
+    background-color:#ededed;
+    border-radius:15px;
+    border:1px solid #d6bcd6;
+    display:inline-block;
+    cursor:pointer;
+    color:#3a8a9e;
+    font-size:17px;
+    padding:7px 25px;
+    text-decoration:none;
+
+}
+.myButton:hover {
+    background-color:#bab1ba;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+.map {
+    width: 100%;
+    height: 374px;
+}
+
+.layout { position: relative;
+    height: 400px;
+}
+.layout DIV {
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    height: 350px;
+    border:1px solid #d6bcd6;
+
+}
+
+.col1 {
+    background: #C7E3E4;
+    width: 33%;
+}
+
+.col2 {
+    background: #E0D2C7;
+    left: 33%;
+    width: 34%;
+}
+
+.col3 {
+    background: #ECD5DE;
+    right: 0;
+    width: 33%;
+}
