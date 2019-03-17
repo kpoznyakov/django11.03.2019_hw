@@ -1,79 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="/static/main/css/style.css">
-    <meta charset="UTF-8">
-    <title>Sport Shop</title>
-</head>
-
-<body>
-<div class="container">
-
-    <div class="header">
-
-        <img id="logo" src="/static/main/media/img/pong_logo.png" alt="logo">
-
-        <h1 class="shop_name">
-            Sport Shop!
-        </h1>
-
-        <ul class="mainmenu">
-            <li><a href="/">Главная</a></li>
-            <li><a href="/cat/">Каталог</a></li>
-            <li><a href="/contacts/">Контакты</a></li>
-        </ul>
-    </div>
-
-    <hr>
-
-    <div class="main_paragraph">
-        <h1>Главная</h1>
-    </div>
-
-    <div class="main_desc">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit justo vitae sem lacinia, eget
-            tincidunt enim fermentum. Fusce dapibus et urna sed gravida. Cras tristique volutpat justo vel porta.
-            Quisque nec eros cursus velit pellentesque porta ut id ex. Sed in ultricies metus. Ut nec lobortis enim. Ut
-            sed lectus pulvinar, elementum justo eget, pharetra sapien. Suspendisse rhoncus feugiat mauris, sit amet
-            ullamcorper nisi dictum ac. In accumsan ante a nulla tristique tristique. Integer ac arcu viverra, volutpat
-            velit id, varius nibh. Maecenas maximus sapien nisl, quis rhoncus enim mollis id.
-
-            Mauris ultricies commodo dictum. Integer efficitur varius tellus id efficitur. Curabitur enim erat, placerat
-            eget magna vitae, porttitor sollicitudin urna. Nullam viverra non velit ut aliquam. Proin pellentesque
-            eleifend nisl et ullamcorper. Vivamus tincidunt dictum sagittis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos.
-
-            Suspendisse eget elit id sem vehicula scelerisque a et orci. Curabitur mauris nibh, rutrum nec augue ut,
-            blandit tempus augue. Sed ullamcorper cursus porttitor. Nam pretium at libero eget iaculis. Maecenas tortor
-            felis, imperdiet eget vulputate eget, convallis quis lacus. Nam malesuada sagittis nulla, fermentum
-            elementum ex pharetra a. In suscipit magna eu eros lacinia, ut elementum quam blandit. Vivamus feugiat nibh
-            et egestas vehicula. Vestibulum cursus consectetur felis, in rhoncus diam iaculis eget. Aliquam erat
-            volutpat.
-
-            Curabitur vitae tincidunt diam. Fusce mattis tincidunt mi at volutpat. Donec dapibus elementum ex, eu
-            aliquet urna facilisis eget. Sed efficitur porttitor mauris, eu vehicula erat suscipit ac. Fusce gravida
-            suscipit diam vel sagittis. Proin rutrum massa tincidunt libero venenatis suscipit. Vestibulum vel metus in
-            enim congue finibus nec sit amet neque. Sed interdum massa sapien, ut lobortis risus scelerisque vel. Nunc
-            consequat nunc vitae dui efficitur, vel hendrerit purus facilisis. Mauris justo lorem, elementum vel
-            consectetur quis, sodales vitae sem. Aenean pharetra eu tortor in auctor.
-
-            Nam sed accumsan orci, vel iaculis arcu. Praesent finibus ultricies blandit. Aenean suscipit accumsan enim,
-            vel semper quam. Nunc quis ultricies magna, at suscipit lacus. Nam vitae lacus sed leo auctor gravida sed
-            vel sem. Phasellus in magna convallis, ultricies felis a, hendrerit quam. Aenean finibus scelerisque
-            volutpat. Ut dictum justo scelerisque ornare iaculis. Duis sollicitudin faucibus velit, vitae fermentum
-            purus efficitur vitae.
-        </p>
-    </div>
-
-    <hr>
-
-    <div class="footer">
-        <p>Все права защищены&copy;</p>
-    </div>
+{% extends 'main/master_template.html' %}
 
 
-</div>
+{% block page_title %}
+    Sport Shop
+{% endblock %}
 
-</body>
-</html>
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_paragraph %}
+    <h1>Главная</h1>
+{% endblock %}
+
+{% block main_desc %}
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit justo vitae sem lacinia, eget
+        tincidunt enim fermentum. Fusce dapibus et urna sed gravida. Cras tristique volutpat justo vel porta.
+        Quisque nec eros cursus velit pellentesque porta ut id ex. Sed in ultricies metus. Ut nec lobortis enim. Ut
+        sed lectus pulvinar, elementum justo eget, pharetra sapien. Suspendisse rhoncus feugiat mauris, sit amet
+        ullamcorper nisi dictum ac. In accumsan ante a nulla tristique tristique. Integer ac arcu viverra, volutpat
+        velit id, varius nibh. Maecenas maximus sapien nisl, quis rhoncus enim mollis id.
+
+        Mauris ultricies commodo dictum. Integer efficitur varius tellus id efficitur. Curabitur enim erat, placerat
+        eget magna vitae, porttitor sollicitudin urna. Nullam viverra non velit ut aliquam. Proin pellentesque
+        eleifend nisl et ullamcorper. Vivamus tincidunt dictum sagittis. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos.
+
+        Suspendisse eget elit id sem vehicula scelerisque a et orci. Curabitur mauris nibh, rutrum nec augue ut,
+        blandit tempus augue. Sed ullamcorper cursus porttitor. Nam pretium at libero eget iaculis. Maecenas tortor
+        felis, imperdiet eget vulputate eget, convallis quis lacus. Nam malesuada sagittis nulla, fermentum
+        elementum ex pharetra a. In suscipit magna eu eros lacinia, ut elementum quam blandit. Vivamus feugiat nibh
+        et egestas vehicula. Vestibulum cursus consectetur felis, in rhoncus diam iaculis eget. Aliquam erat
+        volutpat.
+
+        Curabitur vitae tincidunt diam. Fusce mattis tincidunt mi at volutpat. Donec dapibus elementum ex, eu
+        aliquet urna facilisis eget. Sed efficitur porttitor mauris, eu vehicula erat suscipit ac. Fusce gravida
+        suscipit diam vel sagittis. Proin rutrum massa tincidunt libero venenatis suscipit. Vestibulum vel metus in
+        enim congue finibus nec sit amet neque. Sed interdum massa sapien, ut lobortis risus scelerisque vel. Nunc
+        consequat nunc vitae dui efficitur, vel hendrerit purus facilisis. Mauris justo lorem, elementum vel
+        consectetur quis, sodales vitae sem. Aenean pharetra eu tortor in auctor.
+
+        Nam sed accumsan orci, vel iaculis arcu. Praesent finibus ultricies blandit. Aenean suscipit accumsan enim,
+        vel semper quam. Nunc quis ultricies magna, at suscipit lacus. Nam vitae lacus sed leo auctor gravida sed
+        vel sem. Phasellus in magna convallis, ultricies felis a, hendrerit quam. Aenean finibus scelerisque
+        volutpat. Ut dictum justo scelerisque ornare iaculis. Duis sollicitudin faucibus velit, vitae fermentum
+        purus efficitur vitae.
+    </p>
+{% endblock %}
+
+

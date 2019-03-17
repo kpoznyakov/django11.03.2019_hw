@@ -1,0 +1,24 @@
+{% extends 'main/master_template.html' %}
+
+
+{% block page_title %}
+    Каталог продукции
+{% endblock %}
+
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_paragraph %}
+    <h1>Товары</h1>
+{% endblock %}
+
+{% block main_desc %}
+    {% for item in  items%}
+        id = {{ item.id }}<br>
+        Название = {{ item.name.short }} | {{ item.name.long }}<br>
+        Описание = {{ item.description.short }}<br>
+        <br>
+        <hr>
+    {% endfor %}
+{% endblock %}

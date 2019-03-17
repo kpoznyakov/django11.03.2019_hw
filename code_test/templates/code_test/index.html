@@ -1,0 +1,28 @@
+{% extends 'main/master_template.html' %}
+
+
+{% block page_title %}
+    Страница для проверок переменных и тд.
+{% endblock %}
+
+{% block shop_name %}
+    Служебная страница
+{% endblock %}
+
+{% block main_paragraph %}
+    <h1>Всякое:</h1>
+{% endblock %}
+
+{% block main_desc %}
+    Текущее время: {{ current_time }}
+    <br>
+    {{ sum11 }}
+    <br>
+    {% for i in some_list %}
+        {{ i }}
+        <br>
+    {% endfor %}
+
+{% endblock %}
+
+
