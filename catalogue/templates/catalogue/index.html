@@ -14,11 +14,18 @@
 {% endblock %}
 
 {% block main_desc %}
-    {% for item in  items%}
-        id = {{ item.id }}<br>
-        Название = {{ item.name.short }} | {{ item.name.long }}<br>
-        Описание = {{ item.description.short }}<br>
-        <br>
-        <hr>
+    {% for item in  object_list%}
+        <li class="product_list__item">
+            <span class="product_list__item-name_short">
+                {{ item.name_short|upper }}
+            </span>
+            <span class="product_list__item-name_long">
+                {{ item.name_long }}
+            </span>
+            <span class="product_list__item-price">
+                {{ item.price }}
+            </span>
+        <a href="{% url 'catalogue:detail' pk=item.id %}" class="product_list__item-link">К товару</a>
+        </li>
     {% endfor %}
 {% endblock %}

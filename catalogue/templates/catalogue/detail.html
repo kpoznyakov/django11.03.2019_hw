@@ -1,1 +1,35 @@
 {% extends 'main/master_template.html' %}
+
+{% block page_title %}
+    Product detail
+{% endblock %}
+
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_paragraph %}
+    <h1>Подробная информация</h1>
+{% endblock %}
+
+{% block main_desc %}
+    <div class="product">
+    <h1 class="product__name">
+        {{ object.name_short }}
+    </h1>
+    <h2>
+        {{ object.name_long }}
+    </h2>
+    <span class="product__description">
+        {{ object.params }}
+    </span>
+    <span class="product__cost">
+        {{ object.price|default:"Бесценно!" }}
+    </span>
+</div>
+    <div class="start-imagination">
+    <img src="/{{ object.image.url }}">
+</div> <!--Изображение -->
+
+{% endblock %}
+

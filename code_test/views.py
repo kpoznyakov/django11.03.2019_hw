@@ -10,7 +10,7 @@ def code_test(request):
     return render(request,
                   'code_test/index.html',
                   {
-                      'current_time': current_time(),
+                      'current_time': current_time,
                       'sum11': 1 + 1,
                       'some_list': ['String Item',
                                     {
