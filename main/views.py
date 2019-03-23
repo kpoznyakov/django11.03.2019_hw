@@ -10,6 +10,3 @@ def main(request):
 def contacts(request):
     return render(request, 'main/contacts.html')
 
-
-def uppercase_first_symb(string=str()):
-    return string.capitalize()

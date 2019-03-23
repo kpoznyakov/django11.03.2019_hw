@@ -1,40 +1,39 @@
-from django.shortcuts import render
-import json
+from django.shortcuts import render, redirect
+from .models import Category, Item
+from .forms import CreateCategoryForm
 
 
 # Create your views here.
 
 
 def product_list(request):
-    return render(request,
-                  'catalogue/index.html',
-                  items
-                  )
+    return render(
+        request,
+        'catalogue/index.html',
+        {'object_list': Item.objects.all(),
+         'category_list': Category.objects.all()
+         }
+    )
 
 
-def product_detail(request):
-    return render(request, 'catalogue/detail.html')
+def product_detail(request, pk):
+    return render(
+        request,
+        'catalogue/detail.html',
+        {'object': Item.objects.get(id=pk)}
+    )
 
 
-with open('static/items.json', 'r') as f:
-    items = json.load(f)
+def category_create(request):
+    form = CreateCategoryForm()
+    if request.method == 'POST':
+        Category.objects.create(
+            name=request.POST.get('name'),
+        )
+        return redirect('catalogue:main')
 
-# def code_test(request):
-#     return render(request,
-#                   'code_test/index.html',
-#                   {
-#                       'current_time': current_time(),
-#                       'sum11': 1 + 1,
-#                       'some_list': ['String Item',
-#                                     {
-#                                         'Dict item value int()': 1,
-#                                         'Dict item value str())': '',
-#                                         'Dict item value bool()': True,
-#                                         'Dict item value None': None,
-#                                     },
-#                                     123456,
-#                                     True,
-#                                     None
-#                                     ]
-#                   },
-#                   )
+    return render(
+        request,
+        'categories/create.html',
+        {'form': form}
+    )
