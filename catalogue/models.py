@@ -36,7 +36,21 @@ class Item(models.Model):
         default=0,
     )
     image = models.ImageField(
-        upload_to='static/media/img/item/', blank=True, verbose_name='подпись', null=True
+        upload_to='catalogue',
+        blank=True,
+        verbose_name='подпись',
+        null=True
+    )
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.SET(4),
+        null=True
+    )
+    created = models.DateTimeField(
+        auto_now_add=True,
+    )
+    modified = models.DateTimeField(
+        auto_now=True,
     )
 
     def __str__(self):

@@ -28,7 +28,11 @@
     </span>
 </div>
     <div class="start-imagination">
-    <img src="/{{ object.image.url }}">
+        {% if object.image %}
+            <img src="{{ object.image.url }}">
+        {% else %}
+            <img src="/static/No_image_available.svg">
+        {% endif %}
 </div> <!--Изображение -->
 
 {% endblock %}

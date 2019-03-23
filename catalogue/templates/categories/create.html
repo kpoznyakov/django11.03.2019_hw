@@ -1,0 +1,18 @@
+{% extends 'main/master_template.html' %}
+
+
+{% block page_title %}
+     Форма для создания категории товара
+{% endblock %}
+
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_desc %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+{% endblock %}
