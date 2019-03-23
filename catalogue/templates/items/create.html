@@ -1,0 +1,38 @@
+{% extends 'main/master_template.html' %}
+
+
+{% block page_title %}
+    Форма для создания категории товара
+{% endblock %}
+
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_desc %}
+    <span>Создание товара:</span>
+    <form method="POST" enctype="multipart/form-data">
+        {% for err in item_form.non_field_errors %}
+            <div class="alert">
+                <span>{{ err }}</span>
+            </div>
+        {% endfor %}
+
+        {% csrf_token %}
+        {% for field in item_form %}
+            <div class="field-group">
+                <label for="{{ field.name }}">{{ field.label }}</label>
+                {{ field }}
+
+                {% for err in field.errors %}
+                    <small class="field-error">
+                        {{ err }}
+                    </small>
+                {% endfor %}
+
+            </div>
+        {% endfor %}
+        <input type="submit">
+    </form>
+{% endblock %}
+
