@@ -1,0 +1,21 @@
+{% extends 'main/master_template.html' %}
+
+
+{% block page_title %}
+    Форма для удаления категории товара
+{% endblock %}
+
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_desc %}
+    <span>Удаление категории:</span>
+    <form method="post">
+        {% csrf_token %}
+        <span>Запись "{{ object.name }}" будет удалена, вы уверены?</span>
+        <input type="submit">
+    </form>
+    <br>
+{% endblock %}
+
