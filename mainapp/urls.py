@@ -22,12 +22,16 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalogue/', include('catalogue.urls')),
+    path('items/', include('catalogue.urls.items')),
     path('', include('main.urls')),
     path('code_test/', include('code_test.urls')),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )
 
 # The bad way below:
 # import main.urls

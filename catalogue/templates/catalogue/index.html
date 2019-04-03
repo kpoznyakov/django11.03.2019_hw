@@ -1,5 +1,9 @@
 {% extends 'main/master_template.html' %}
+{% load static %}
 
+{% block page_static %}
+    <link rel="stylesheet" href="{% static 'catalogue/css/list.css' %}">
+{% endblock %}
 
 {% block page_title %}
     Каталог продукции
@@ -15,29 +19,13 @@
 
 {% block main_desc %}
     {% for item in object_list %}
-        <li class="product_list__item">
-            <span class="product_list__item-name_short">
-                {{ item.name_short|upper }}
-            </span>
-            <span class="product_list__item-name_long">
-                {{ item.name_long }}
-            </span>
-            <span class="product_list__item-price">
-                {{ item.price }}
-            </span>
-        <a href="{% url 'catalogue:detail' pk=item.id %}" class="product_list__item-link">К товару</a>
-        </li>
+        {% include 'main/catalogue.html' with image=item.image name_short=item.name_long name_long=item.name_long price=item.price id=item.id %}
     {% endfor %}
 
     <hr>
-<h1>Категории:</h1>
+    <h1>Категории:</h1>
     {% for i in category_list %}
-
-        <li class="category_list__item">
-            <span class="category_list__item-name_short">
-                {{ i.name }}. ID = {{ i.id }}
-            </span>
-        </li>
+        {% include 'main/categories.html' with name=i.name id=i.id %}
     {% endfor %}
 {% endblock %}
 

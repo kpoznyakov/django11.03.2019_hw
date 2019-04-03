@@ -1,0 +1,12 @@
+<li class="products__item">
+            <span class="product_list__item-name_short">
+                {{ name_short|upper }}
+            </span>
+    <span class="product_list__item-name_long">
+                {{ name_long }}
+            </span>
+    <span class="products__item-cost">
+                {{ price }}
+            </span>
+    <a href="{% url 'catalogue:detail' pk=id %}" class="products__item-link">К товару</a>
+</li>

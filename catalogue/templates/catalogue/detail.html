@@ -1,5 +1,11 @@
 {% extends 'main/master_template.html' %}
 
+{% load static %}
+
+{% block page_static %}
+    <link rel="stylesheet" href="{% static 'catalogue/css/detail.css' %}">
+{% endblock %}
+
 {% block page_title %}
     Product detail
 {% endblock %}
@@ -14,26 +20,26 @@
 
 {% block main_desc %}
     <div class="product">
-    <h1 class="product__name">
-        {{ object.name_short }}
-    </h1>
-    <h2>
-        {{ object.name_long }}
-    </h2>
-    <span class="product__description">
-        {{ object.params }}
-    </span>
-    <span class="product__cost">
-        {{ object.price|default:"Бесценно!" }}
-    </span>
-</div>
+        <h1 class="product__name">
+            {{ object.name_short }}
+        </h1>
+        <h2>
+            {{ object.name_long }}
+        </h2>
+        <span class="product__description">
+            {{ object.params }}
+        </span>
+        <span class="product__cost">
+            {{ object.price|default:"Бесценно!" }}
+        </span>
+    </div>
     <div class="start-imagination">
         {% if object.image %}
             <img src="{{ object.image.url }}">
         {% else %}
-            <img src="/static/No_image_available.svg">
+            <img src="{% static 'catalogue/images/No_image_available.svg' %}">
         {% endif %}
-</div> <!--Изображение -->
+    </div> <!--Изображение -->
 
 {% endblock %}
 
