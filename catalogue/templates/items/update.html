@@ -1,0 +1,17 @@
+{% extends 'main/master_template.html' %}
+
+
+{% block page_title %}
+    Форма для изменения товара
+{% endblock %}
+
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_desc %}
+    <span>Изменение:</span>
+    {% include 'main/form.html' with form=form %}
+    <br>
+{% endblock %}
+

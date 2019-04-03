@@ -25,6 +25,7 @@ urlpatterns = [
     path('items/', include('catalogue.urls.items')),
     path('', include('main.urls')),
     path('code_test/', include('code_test.urls')),
+    path('authentication/', include('authentication.urls'))
 ]
 
 if settings.DEBUG:

@@ -54,4 +54,4 @@ class Item(models.Model):
     )
 
     def __str__(self):
-        return str(self.id) + " | " + self.name_short + " | " + self.name_long
+        return str(self.id) + " | " + self.name_short
