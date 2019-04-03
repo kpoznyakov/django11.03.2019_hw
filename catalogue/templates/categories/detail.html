@@ -1,0 +1,36 @@
+{% extends 'main/master_template.html' %}
+
+{% load static %}
+
+{% block page_static %}
+    <link rel="stylesheet" href="{% static 'catalogue/css/detail.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    Category detail
+{% endblock %}
+
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_paragraph %}
+    <h1>Подробная информация</h1>
+{% endblock %}
+
+{% block main_desc %}
+    <div class="product">
+        <h1 class="product__name">
+            Name: {{ object.name }} <br>
+            ID: {{ object.id }}
+        </h1>
+        <h2>
+            {{ object.desc }}
+        </h2>
+    <div class="products">
+    {% for itm in object.item_set.all %}
+        {% include 'main/catalogue.html' with image=itm.image name=itm.short_name description=itm.description cost=itm.cost id=itm.id %}
+    {% endfor %}
+</div>
+{% endblock %}
+

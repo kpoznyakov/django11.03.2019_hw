@@ -18,14 +18,73 @@
 {% endblock %}
 
 {% block main_desc %}
-    {% for item in object_list %}
+    {% for item in items_list %}
         {% include 'main/catalogue.html' with image=item.image name_short=item.name_long name_long=item.name_long price=item.price id=item.id %}
     {% endfor %}
 
     <hr>
-    <h1>Категории:</h1>
-    {% for i in category_list %}
-        {% include 'main/categories.html' with name=i.name id=i.id %}
-    {% endfor %}
+    <div class="categories">
+        <h1>Категории:</h1>
+        {% for itm in category_list %}
+            <div class="categories__item">
+            <span class="categories__item-name">
+                {{ itm.name }}
+            </span>
+                <span class="categories__item-description">
+                {{ itm.desc }}
+            </span>
+                <a href="{% url 'categories:detail' pk=itm.id %}" class="categories__item-link">Перейти</a>
+            </div>
+        {% endfor %}
+    </div>
+<button id="load-button">Show all</button>
+{% endblock %}
+
+{% block page_scripts %}
+<script>
+
+const url = 'http://127.0.0.1:8000/items/api/';
+
+const container = document.querySelector('.items');
+
+const loadButton = document.querySelector('#load-button');
+
+const asyncLoadData = () => {
+    fetch(url)
+        .then(response => response.json())
+        .then(
+            response => {
+                loadedHtml = ''
+                response.results.map(
+                    itm => { loadedHtml += renderProduct(itm) }
+                )
+                container.innerHTML = loadedHtml
+            }
+        )
+};
+
+const renderProduct = ({id, name_short, image, description, price}) => (
+    `
+    <div class="products__item">
+        <img class="products__item-image" src="${ image }" alt="${ name_short }">
+        <span class="products__item-name">
+            ${ name_short }
+        </span>
+        <span class="products__item-description">
+            ${ description }
+        </span>
+        <span class="products__item-cost">
+            ${ price }
+        </span>
+        <a href="/products/${ id }/" class="products__item-link">
+            Перейти
+        </a>
+    </div>
+    `
+);
+
+loadButton.addEventListener('click', asyncLoadData);
+
+</script>
 {% endblock %}
 

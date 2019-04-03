@@ -25,7 +25,7 @@
 
         <ul class="mainmenu">
             <li><a href="{% url 'main:main' %}">Главная</a></li>
-            <li><a href="{% url 'catalogue:main' %}">Каталог</a></li>
+            <li><a href="{% url 'categories:main' %}">Каталог</a></li>
             <li><a href="{% url 'main:contacts' %}">Контакты</a></li>
             <li><a href="{% url 'code_test:main' %}">Тест кода</a></li>
         </ul>
@@ -46,6 +46,7 @@
     <div class="footer">
         <p>Все права защищены&copy;</p>
     </div>
+{% block page_scripts %} {% endblock %}
 
 
 </div>

@@ -2,7 +2,7 @@
 
 
 {% block page_title %}
-    Форма для создания категории товара
+    Форма для создания товара
 {% endblock %}
 
 {% block shop_name %}
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block main_desc %}
-    <span>Создание товара:</span>
+    <span>Создание:</span>
     <form method="POST" enctype="multipart/form-data">
         {% for err in item_form.non_field_errors %}
             <div class="alert">

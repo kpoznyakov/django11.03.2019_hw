@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     'catalogue',
     'code_test',
+    'authentication'
 ]
 
 MIDDLEWARE = [
@@ -105,6 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Задаем модель пользователя
+AUTH_USER_MODEL = 'authentication.AccountUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

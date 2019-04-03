@@ -1,0 +1,16 @@
+{% extends 'main/master_template.html' %}
+
+
+{% block page_title %}
+    Login form page
+{% endblock %}
+
+{% block shop_name %}
+    Sport Shop!
+{% endblock %}
+
+{% block main_desc %}
+    {% include 'main/form.html' with form=form %}
+    <br>
+{% endblock %}
+
